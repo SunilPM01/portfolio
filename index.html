@@ -1,0 +1,1689 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunil Kumar P M - Portfolio</title>
+
+  <link href="favicon.ico" rel="shortcut icon" />
+  <!-- Bootstrap -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Athiti:300,400,500,600" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --steel: SteelBlue;
+      --muted: #6b7280;
+      --glass: rgba(255, 255, 255, 0.04);
+      --container-max: 1100px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--black);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ---------- NAV ---------- */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 28px;
+      background: #000000;
+      backdrop-filter: blur(4px);
+      /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
+    }
+
+    /* .logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--black)
+    } */
+
+    .menu a {
+      margin-left: 18px;
+      color: #fff !important;
+      /* font-weight: 600; */
+      cursor: pointer;
+      text-decoration: none;
+      font-family: 'Athiti', sans-serif;
+    }
+
+    .menu a:hover {
+      color: var(--steel);
+      transform: translateY(-2px);
+      border-bottom: 4px solid steelblue;
+      /* animation: ease-in 1.0s linear; */
+      transition: ease 0.1s;
+    }
+
+    .menu a.active {
+      color: var(--steel);
+      transform: translateY(-2px);
+      border-bottom: 4px solid steelblue;
+    }
+
+    .menu a.active::after {
+      color: var(--steel);
+      transform: translateY(-2px);
+      border-bottom: 4px solid steelblue;
+    }
+
+
+    @media(max-width:768px) {
+      .menu {
+        display: none
+      }
+    }
+
+    /* ---------- HERO (black) ---------- */
+    #hero {
+      height: 100vh;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* animated nodes + soft glow */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1
+    }
+
+    .hero-glow {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      width: 780px;
+      height: 420px;
+      transform: translateX(-50%) translateY(-20%);
+      background: radial-gradient(circle, rgba(70, 130, 180, 0.16) 0%, rgba(0, 0, 0, 0) 60%);
+      filter: blur(32px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-center {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      color: var(--white);
+      max-width: 900px;
+      padding: 34px
+    }
+
+    /* .hero-name {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 6px
+    } */
+
+    .hero-name {
+      color: #fff;
+      font-family: "Raleway", sans-serif;
+      letter-spacing: 1px;
+      font-size: 100px;
+      font-weight: bold;
+    }
+
+    /* .hero-title {
+      font-size: 20px;
+      color: #cfe9ff;
+      font-weight: 600
+    } */
+
+    .hero-title {
+      font-size: 23px;
+      line-height: 30px;
+      font-family: 'Athiti', sans-serif;
+    }
+
+    /* .down-arrow {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      cursor: pointer
+    }
+
+    .down-arrow i {
+      font-size: 46px;
+      color: var(--white);
+      animation: arrowPulse 1.6s infinite
+    } */
+
+    .down-arrow {
+      position: absolute;
+      bottom: 22px;
+      left: auto;
+      transform: translateX(-50%);
+      z-index: 6;
+      cursor: pointer;
+      /* animation: arrowPulse 0.5s infinite ease-in-out; */
+      animation: arrowPulse 1.2s infinite linear;
+      /* border: 2px solid red; Remove after confirming */
+    }
+
+    .down-arrow i {
+      font-size: 46px;
+      color: #fff;
+      display: block;
+    }
+
+
+    @keyframes arrowPulse {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(20px);
+      }
+    }
+
+
+    /* @keyframes arrowPulse {
+      0% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(12px)
+      }
+
+      100% {
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes arrowPulse {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(15px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    } */
+
+    @keyframes arrowPulse {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(10px);
+      }
+    }
+
+
+
+    /* ---------- SECTION BASE ---------- */
+    section {
+      padding: 65px 18px;
+      background: var(--white);
+      transition: all .7s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      /* margin-bottom: 20px; */
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: none
+    }
+
+    .container-narrow {
+      max-width: var(--container-max);
+      margin: 0 auto
+    }
+
+    /* subtle separators */
+    .section-sep {
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    /* h2.section-title {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 18px
+    } */
+
+    .section-title {
+      position: relative;
+      /* display: inline-block; */
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      text-transform: capitalize;
+      color: #000;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    /* grey line */
+    .section-title::after {
+      content: "";
+      height: 1px;
+      width: 90px;
+      background: #9c9c9c;
+      position: absolute;
+      bottom: -6px;
+      left: calc(50% - 45px);
+      z-index: 1;
+    }
+
+    /* blue pill centered on the line, but a bit taller so grey is still visible */
+    .section-title::before {
+      content: "";
+      position: absolute;
+      background: steelblue;
+      bottom: -8px;
+      left: calc(50% - 10px);
+      height: 6px;
+      width: 20px;
+      z-index: 2;
+    }
+
+
+
+
+    /* .section-title h2:after {
+  content: "";
+  height: 1px;
+  width: 90px;
+  background: #9c9c9c;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 45px);
+  z-index: 1;
+}
+
+.section-title h2:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: calc(50% - 10px);
+  height: 6px;
+  width: 20px;
+  z-index: 2;
+} */
+
+    p.lead-muted {
+      font-size: 17px;
+      color: #777777;
+      line-height: 30px;
+      font-family: 'Athiti', sans-serif;
+      text-align: center;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-card {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap
+    }
+
+    .about-pic {
+      width: 220px;
+      height: auto;
+      border-radius: 16px;
+      overflow: hidden;
+      /* border: 3px solid var(--steel); */
+      flex: 0 0 220px
+    }
+
+    .about-pic img,
+    .project-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 250px
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px 48px;
+    }
+
+    .skill-pill {
+      position: relative;
+      font-size: 14px;
+    }
+
+    .skill-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .skill-bar {
+      position: relative;
+      height: 6px;
+      background: #e5e5e5;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: steelblue;
+      border-radius: inherit;
+      transition: width 1.2s ease-out;
+    }
+
+    /* percentage label on the right, like in your screenshot */
+    .skill-val {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateY(39%);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* .skills-grid {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .skill-pill {
+      flex: 1;
+      min-width: 180px;
+      padding: 14px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #fff, #fbfbfb);
+      border: 1px solid rgba(0, 0, 0, 0.04)
+    }
+
+    .skill-title {
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: #e9eef7;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 8px
+    }
+
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: var(--steel);
+      transition: width 1.4s cubic-bezier(.2, .9, .2, 1)
+    } */
+
+    /* ---------- WHAT I DO (cards aligned 3 per row) ---------- */
+
+    #do {
+      background: whitesmoke;
+    }
+
+    #do .card {
+      border-radius: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all .45s cubic-bezier(.2, .9, .2, 1);
+      background: linear-gradient(180deg, #fff, #fbfdff);
+    }
+
+    #do .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 18px 40px rgba(70, 130, 180, 0.08)
+    }
+
+    .card .icon {
+      font-size: 34px;
+      color: var(--steel);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .card h5 {
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-align: center
+    }
+
+    /* ensure three in a row */
+    @media(min-width:992px) {
+      .do-col {
+        flex: 0 0 32%;
+        max-width: 32%
+      }
+    }
+
+    @media(max-width:991px) {
+      .do-col {
+        flex: 0 0 48%;
+        max-width: 48%;
+        margin-bottom: 12px
+      }
+    }
+
+    @media(max-width:575px) {
+      .do-col {
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    /* ---------- EXPERIENCE (timeline split + connectors) ---------- */
+    .timeline {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      position: relative;
+      padding-left: 0
+    }
+
+    /* central vertical line positioned relative to container width */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 36%;
+      top: 20px;
+      bottom: 20px;
+      width: 1px;
+      background: linear-gradient(180deg, var(--steel), rgba(70, 130, 180, 0.6));
+      transform: translateX(-50%);
+      border-radius: 6px;
+      z-index: 1;
+    }
+
+    .timeline-block {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      /* margin-bottom: 34px; */
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+      padding-top: 12px;
+      padding-bottom: 12px
+    }
+
+    .timeline-left {
+      flex: 0 0 36%;
+      max-width: 36%;
+      text-align: right;
+      padding-right: 20px
+    }
+
+    .timeline-left .company {
+      font-weight: 800;
+      font-size: 16px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .timeline-left .period {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+      font-family: 'Athiti', sans-serif;
+    }
+
+    .timeline-right {
+      flex: 1;
+      min-width: 260px;
+      padding-left: 28px
+    }
+
+    .timeline-right .role {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--steel);
+      margin-bottom: 6px;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .timeline-right .desc {
+      /* color: #333; */
+      color: #333333e3;
+      line-height: 1.65;
+      font-family: 'Athiti', sans-serif;
+    }
+
+    /* circular marker for each timeline-block */
+    .timeline-block::after {
+      content: '';
+      position: absolute;
+      left: calc(36% - 11px);
+      top: 18px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--steel);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 16px rgba(70, 130, 180, 0.45);
+      transform: scale(0.8);
+      opacity: 0;
+      transition: all .45s cubic-bezier(.2, .9, .2, 1);
+    }
+
+    /* show/pop marker when block enters view (we add .show-marker via JS) */
+    .timeline-block.show-marker::after {
+      transform: scale(1);
+      opacity: 1
+    }
+
+    /* ---------- PROJECTS (tabs + grid 3 per row) ---------- */
+    .nav-projects .nav-link {
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      margin: 0 8px;
+      padding: 10px 18px;
+      font-weight: 700
+    }
+
+    .nav-projects .nav-link.active {
+      background: var(--steel);
+      color: var(--white) !important
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px
+    }
+
+    .project-item {
+      flex: 0 0 32%;
+      max-width: 32%;
+      background: #fafafa;
+      border: 2px solid rgba(0, 0, 0, 0.04);
+      height: 200px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #666
+    }
+
+    @media(max-width:991px) {
+      .project-item {
+        flex: 0 0 48%;
+        max-width: 48%
+      }
+    }
+
+    @media(max-width:575px) {
+      .project-item {
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    /* ---------- CONTACT ---------- */
+    #contact {
+      background: var(--black);
+      color: var(--white);
+      padding-top: 54px;
+      padding-bottom: 54px
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 26px;
+      justify-content: center
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--steel);
+      font-size: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all .25s
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-6px);
+      background: var(--steel);
+      color: var(--white)
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: var(--white);
+      padding: 18px 12px;
+      border-top: 2px solid rgba(0, 0, 0, 0.04);
+      text-align: center
+    }
+
+    /* ---------- MICRO ANIMATIONS ---------- */
+    .float-up {
+      transform: translateY(14px);
+      opacity: 0;
+      transition: all .6s ease
+    }
+
+    .float-up.show {
+      transform: none;
+      opacity: 1
+    }
+
+    .fade-scale {
+      opacity: 0;
+      transform: scale(.98);
+      transition: all .6s ease
+    }
+
+    .fade-scale.show {
+      opacity: 1;
+      transform: none
+    }
+
+    .topbar .logo {
+      display: inline-block;
+      float: left;
+    }
+
+    .topbar .logo a span {
+      color: steelblue;
+    }
+
+    .topbar .logo a {
+      color: #fff;
+      font-size: 38px;
+      line-height: 38px;
+      font-weight: 800;
+      font-family: "Raleway", sans-serif;
+      text-decoration: none;
+    }
+
+    /* tabs */
+    /* Card container */
+    .project-card {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Simple entrance animation when tab changes */
+    .tab-pane.show .project-card {
+      animation: fadeUp 0.45s ease;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hover lift */
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      font-family: 'Athiti', sans-serif;
+    }
+
+    /* Hover overlay */
+    .project-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.35s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(81, 78, 168, 0.78);
+      /* purple-like overlay */
+      color: #fff;
+      opacity: 0;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      transform: translateY(10%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .project-overlay h5 {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .project-overlay p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    /* Reveal overlay on hover */
+    .project-card:hover .project-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Tabs styling tweak */
+    .nav-tabs .nav-link {
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .nav-tabs .nav-link.active {
+      color: #000;
+      border-bottom-color: #337ab7;
+    }
+
+    @media(min-width:320px) and (max-width:767px) {
+
+      .hero-name {
+        font-size: 30px;
+      }
+
+      .hero-title {
+        font-size: 20px;
+      }
+
+      .lead-muted {
+        font-size: 14px;
+      }
+
+      .about-card {
+        justify-content: center;
+      }
+
+      p.lead-muted {
+        font-size: 16px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline-block::after {
+        display: none;
+      }
+
+      .timeline-left {
+        flex: auto;
+        max-width: fit-content;
+        text-align: start;
+        padding-right: 0px;
+      }
+
+      .timeline-right {
+        flex: 0;
+        min-width: fit-content;
+        padding-left: 0px;
+      }
+
+      .nav-tabs .nav-link {
+        font-size: 15px;
+      }
+
+      #modalDesc {
+        font-size: 15px;
+      }
+
+      .contact-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+
+      .contact-body {
+        font-size: 13px;
+      }
+    }
+
+    @media(min-width:768px) and (max-width:1080px) {
+
+      .hero-name {
+        font-size: 75px;
+      }
+      .lead-muted {
+        font-size: 19px;
+      }
+
+      .about-card {
+        justify-content: center;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    #modalDesc {
+      font-family: 'Athiti', sans-serif;
+    }
+
+    .modal-title {
+      color: steelblue;
+      font-weight: 700;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="topbar">
+    <div class="logo">
+      <!-- Logo -->
+      <a href="#">S
+        <span>U</span>N
+        <span>I</span>L</a>
+    </div>
+    <!-- <div class="logo">Sunil — Technical Lead</div> -->
+    <div class="menu">
+      <a data-target="#hero" class="active">Home</a>
+      <a data-target="#about">About</a>
+      <a data-target="#do">What I do</a>
+      <a data-target="#experience">Experience</a>
+      <a data-target="#projects">Portfolio</a>
+      <a data-target="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-glow"></div>
+
+    <div class="hero-center">
+      <div class="hero-panel fade-scale">
+        <div class="hero-name">Sunil Kumar P M</div>
+        <div class="hero-title">Technical Lead • Full Stack Developer</div>
+        <div class="mt-3 lead-muted" style="color:#dbefff">I design and deliver high-performance web platforms, lead
+          engineering teams and implement secure scalable systems.</div>
+      </div>
+    </div>
+
+    <div class="down-arrow" id="downArrow" title="Scroll to About">
+      <i class="bi bi-arrow-down-circle"></i>
+    </div>
+  </section>
+
+  <!-- ABOUT (white) -->
+  <section id="about" class="section-sep">
+    <div class="container pt100 pb65">
+      <h2 class="text-center section-title">About Me</h2>
+      <div class="d-flex align-items-center about-card">
+        <div class="about-pic shadow-sm"><img src="sunil-profile-pic.jpg" alt="Profile">
+        </div>
+        <div class="about-text">
+          <p class="lead-muted" style="text-align: left;"><b>AI-Powered Full Stack Engineer</b> with an unrelenting
+            passion for crafting elegant,
+            rich user
+            experiences using modern frameworks and Libraries. I thrive on transforming complex problems
+            into intuitive, dynamic designs through cutting-edge effects and seamless interactions. As a Technical Lead,
+            I architect scalable software solutions, mentor engineering teams and drive innovation across the full
+            development lifecycle—from concept to deployment.
+            My expertise spans <b>Software Architecture</b>, where I design robust, enterprise-grade systems that
+            balance performance, scalability and maintainability. With <b>9+</b> years of experience, I've led
+            AI-powered
+            projects, implemented DevOps pipelines and delivered high impact solutions across diverse domains including
+            Automotive, Cybersecurity, Semiconductor and Banking.
+            When not architecting the next breakthrough or mentoring teams, I cherish deep connections with my family
+            and friends. I step away from social media to meet people face-to-face, enjoying real conversations and
+            building authentic relationships that energize my collaborative approach to innovation.</p>
+          <div class="mt-3">
+            <!-- <button class="btn btn-outline-dark me-2">Download Resume</button> -->
+            <a class="btn btn-primary" href="#contact"
+              style="background:var(--steel);border-color:var(--steel);border-radius:20px">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-sep">
+    <div class="container pt100 pb65">
+      <h2 class="section-title">Skillsets</h2>
+      <div class="skills-grid mt-3">
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">RAG</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="90">
+          <div class="skill-title">JavaScript</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">90%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="95">
+          <div class="skill-title">Angular</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">95%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="92">
+          <div class="skill-title">React</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">92%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">Redux</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">jQuery</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="95">
+          <div class="skill-title">Web Design</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">95%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="90">
+          <div class="skill-title">D3.JS / Chart.JS / HighCharts</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">90%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">Unit Test</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="90">
+          <div class="skill-title">Python</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">90%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="90">
+          <div class="skill-title">Mongo DB</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">90%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">Django & DRF</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="85">
+          <div class="skill-title">Cloud & DevOps</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">85%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="80">
+          <div class="skill-title">System Architecture</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">80%</div> <!-- add this -->
+        </div>
+        <div class="skill-pill fade-scale" data-val="50">
+          <div class="skill-title">Machine Learning</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">50%</div> <!-- add this -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DO -->
+  <section id="do" class="section-sep">
+    <div class="container pt100 pb65">
+      <h2 class="text-center section-title">What I do?</h2>
+      <!-- Responsive 3-per-row alignment -->
+      <div class="d-flex flex-wrap" style="gap:18px;">
+        <div class="do-col">
+          <div class="card p-4 fade-scale">
+            <div class="icon"><i class="bi bi-terminal icon"></i></div>
+            <h5>Full Stack Development</h5>
+            <p class="lead-muted">Responsive frontends, solid API layers and robust integrations.</p>
+          </div>
+        </div>
+
+        <div class="do-col">
+          <div class="card p-4 fade-scale">
+            <div class="icon"><i class="bi bi-gear icon"></i></div>
+            <h5>System Design & Architecture</h5>
+            <p class="lead-muted">Designing resilient microservices and scalable data flows.</p>
+          </div>
+        </div>
+
+        <div class="do-col">
+          <div class="card p-4 fade-scale">
+            <div class="icon"><i class="bi bi-people icon"></i></div>
+            <h5>Team Leadership</h5>
+            <p class="lead-muted">Mentoring, code quality, process and delivery ownership.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section-sep">
+    <div class="container pt100 pb65">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="timeline fade-scale" id="timelineRoot">
+
+        <div class="timeline-block">
+          <div class="timeline-left">
+            <div class="company">Continental AG (Aumovio SE)</div>
+            <div class="period">Jan 2024 — Present</div>
+          </div>
+          <div class="timeline-right">
+            <div class="role">Technical Lead</div>
+            <div class="desc">Architect and lead the design of full-stack web and AI platforms, with a strong focus on
+              scalable architectures, secure integrations and modern RAG-based applications. Lead infrastructure and
+              DevOps improvements on AWS with CI/CD, static code analysis and high-volume data backends using MongoDB.
+              Provide hands-on technical leadership across infrastructure, DevOps and frontend modernization, while
+              mentoring engineers, driving cross-team collaboration and elevating engineering standards through best
+              practices and knowledge sharing.</div>
+          </div>
+        </div>
+
+        <div class="timeline-block">
+          <div class="timeline-left">
+            <div class="company">Continental AG</div>
+            <div class="period">Jul 2021 — Jan 2024</div>
+          </div>
+          <div class="timeline-right">
+            <div class="role">Technical Specialist</div>
+            <div class="desc">Owned the end-to-end engineering toolchain by writing high-quality code, performing
+              rigorous code reviews and enforcing consistent implementation standards across teams. Took responsibility
+              for core tools and services across infrastructure, DevOps and frontend modernization, while closely
+              collaborating with cross-functional engineering and management teams to deliver reliable, secure and
+              high-performing solutions.
+            </div>
+          </div>
+
+          <div class="timeline-block">
+            <div class="timeline-left">
+              <div class="company">Aujas Cybersecurity Ltd (NSE Company)</div>
+              <div class="period">Dec 2018 — Jul 2021</div>
+            </div>
+            <div class="timeline-right">
+              <div class="role">Software Engineer - UI</div>
+              <div class="desc">Worked as a Senior Engineer in the CyberSecurity domain, leading UI development for
+                IBM
+                QRadar applications using the latest versions of Angular and React. Designed and implemented
+                interactive,
+                dynamically reusable UI components and addressed web application security issues through secure
+                encoding
+                practices, XSS prevention, data encryption and related standards. Developed reusable charting services
+                with D3.js, Chart.js and Highcharts and routinely wrote unit tests for UI components using Jasmine and
+                Jest to ensure code quality and reliability.</div>
+            </div>
+          </div>
+
+          <div class="timeline-block">
+            <div class="timeline-left">
+              <div class="company">ASM Technologies Ltd</div>
+              <div class="period">Aug 2017 — Dec 2018</div>
+            </div>
+            <div class="timeline-right">
+              <div class="role">Software Engineer - Full Stack</div>
+              <div class="desc">Was responsible for full-stack development using Angular, Python-Django, PostgreSQL
+                and
+                AWS. Reported directly to the VP of Technology, worked within an Agile process and collaborated
+                closely
+                with backend and UX teams across Russia, the USA, the Netherlands and other countries. Served on the
+                technical interview panel and contributed as an engineer in the ASM product team, focusing on R&D for
+                platforms related to the Internet of Things (IoT) and On-Board Diagnostics (OBD).</div>
+            </div>
+          </div>
+
+          <div class="timeline-block">
+            <div class="timeline-left">
+              <div class="company">Gowdanar Technologies Pvt Ltd</div>
+              <div class="period">Aug 2016 — Aug 2017</div>
+            </div>
+            <div class="timeline-right">
+              <div class="role">Software Engineer</div>
+              <div class="desc">Led end-to-end UI development using AngularJS, designing multiple responsive
+                dashboards
+                optimized for smartphones and tablets. Reported directly to the CTO, rapidly translating online
+                designs
+                into production-ready interfaces and implementing the admin UI with robust role-based access controls.
+                Mentored and guided designers and front-end developers on cross-browser compatibility and responsive
+                web
+                design best practices, while optimizing the application build process with Grunt and providing
+                frontend
+                technical leadership to the team.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-sep">
+    <div class="container pt100 pb65">
+      <h2 class="section-title">Projects</h2>
+      <!-- Tabs -->
+      <ul class="nav nav-tabs justify-content-center mb-4" id="portfolioTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all">All</button>
+        </li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#tab-learning">Learning</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#tab-banking">Banking</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#tab-semiconductor">Semiconductor</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+            data-bs-target="#tab-scientific">Scientific</button></li>
+      </ul>
+
+      <!-- One container per tab, cards created from JS config -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab-all">
+          <div class="row g-4" id="grid-all"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-learning">
+          <div class="row g-4" id="grid-learning"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-banking">
+          <div class="row g-4" id="grid-banking"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-semiconductor">
+          <div class="row g-4" id="grid-semiconductor"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-scientific">
+          <div class="row g-4" id="grid-scientific"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImg" src="" class="img-fluid mb-3" alt="">
+            <p id="modalDesc" class="mb-0"></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container pt100 pb65 text-center">
+      <h2 class="section-title" style="color:var(--white)">Get in Touch</h2>
+
+      <div class="container contact-body">
+        <div class="row">
+
+          <!-- Contact Info -->
+          <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.2s">
+            <i class="bi bi-telephone"></i>
+            <p>(91) 8746083834
+              <br>(91) 9113220074
+            </p>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.4s">
+            <i class="bi bi-geo-alt-fill"></i>
+            <p>Vidyaranyapura
+              <br>Bangalore, KA, India
+            </p>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.6s">
+            <i class="bi bi-envelope"></i>
+            <p>sunilkumarpm01@gmail.com</p>
+          </div>
+
+        </div>
+      </div>
+      <br></br>
+      <!-- <div class="mb-3" style="color:rgba(255,255,255,0.72)">Connect with me on</div> -->
+
+      <div class="contact-links">
+        <a href="https://in.linkedin.com/in/sunil-kumar-p-m-3b493810a" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <div class="container pt100 pb65 py-2">
+      <small style="font-family: 'Athiti', sans-serif;font-weight: 500;">Copyright © Sunil Kumar P M <span
+          id="yr"></span>.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <script>
+
+    // Single source of truth for items
+    const items = [
+      {
+        tab: ["all", "learning"],
+        img: "jux1.png",
+        title: "JUX",
+        desc: "JUX is a website built for Jain University. It is built over the OpenEdx instance which involves both LMS and CMS. The platform allows the students of the University to enroll to the courses powered by edx.org and also to the courses created by the same Institution."
+      },
+      {
+        tab: ["all", "semiconductor"],
+        img: "applied.png",
+        title: "Lab-Monitoring",
+        desc: "Lab-Monitoring, is a web-based application built for the client Applied Materials. It helps in monitoring all the semiconductor tools installed within Applied Materials premises."
+      },
+      {
+        tab: ["all", "learning"],
+        img: "gsmart.png",
+        title: "GSMART",
+        desc: "This is an Enterprise Resource Planning project where HR can manage the employee payroll and attendance timesheet in the organization. The GSMART app gives an easy solution to manage the employee records and to track, maintain, attendance timesheet of each employee."
+      },
+      {
+        tab: ["all", "banking"],
+        img: "atl.png",
+        title: "AnyTimeLoan",
+        desc: "ATL is a leading lending marketplace. It aims at making credit available to millions of Unbanked & credit starved Indians via mapping their digital footprints."
+      },
+      {
+        tab: ["all", "scientific"],
+        img: "kogence.png",
+        title: "Kogence",
+        desc: "Kogence brings supercomputing infrastructure to the web browser of any personal device. It enables engineers, researchers, scientists and students to collaborate, rapidly iterate and execute their models and simulations on supercomputing infrastructure as needed with zero setup."
+      }
+    ];
+
+    const makeCard = ({ img, title, desc }) => `
+    <div class="col-md-4">
+      <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+           data-img="${img}" data-title="${title}" data-desc="${desc}">
+        <img src="${img}" class="img-fluid" alt="${title}">
+        <div class="project-overlay">
+          <h5>${title}</h5>
+          <p>${desc}</p>
+        </div>
+      </div>
+    </div>`;
+
+    // Render cards into each tab grid
+    items.forEach(item => {
+      if (item.tab.includes("all")) document.getElementById("grid-all").innerHTML += makeCard(item);
+      if (item.tab.includes("learning")) document.getElementById("grid-learning").innerHTML += makeCard(item);
+      if (item.tab.includes("banking")) document.getElementById("grid-banking").innerHTML += makeCard(item);
+      if (item.tab.includes("semiconductor")) document.getElementById("grid-semiconductor").innerHTML += makeCard(item);
+      if (item.tab.includes("scientific")) document.getElementById("grid-scientific").innerHTML += makeCard(item);
+    });
+
+    // Modal population via data attributes
+    const modalEl = document.getElementById('projectModal');
+    modalEl.addEventListener('show.bs.modal', event => {
+      const card = event.relatedTarget;
+      document.getElementById('modalImg').src = card.dataset.img;
+      document.getElementById('modalImg').alt = card.dataset.title;
+      document.getElementById('modalTitle').textContent = card.dataset.title;
+      document.getElementById('modalDesc').textContent = card.dataset.desc;
+    });
+    // footer year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    /* IntersectionObserver Reveal and timeline marker show */
+    (function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // stagger child reveals
+            entry.target.querySelectorAll('.fade-scale, .float-up, .skill-pill, .card, .project-item').forEach((el, i) => {
+              setTimeout(() => el.classList.add('show'), i * 90);
+            });
+            // if timeline section -> add markers to visible blocks
+            if (entry.target.id === 'experience') {
+              const blocks = entry.target.querySelectorAll('.timeline-block');
+              blocks.forEach((b, idx) => {
+                setTimeout(() => b.classList.add('show-marker'), idx * 160);
+              });
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      document.querySelectorAll('section').forEach(s => observer.observe(s));
+    })();
+
+    /* Smooth Menu Scrolling */
+    // $('.topbar .menu a').on('click', function () {
+    //   $('.topbar .menu a').removeClass('active');
+    //   $(this).addClass('active');
+    //   const tgt = $(this).data('target');
+    //   if (tgt && $(tgt).length) {
+    //     $('html,body').animate({ scrollTop: $(tgt).offset().top - 68 }, 560);
+    //   }
+    // });
+
+    /* Click: smooth scroll + active state */
+    /* Click: smooth scroll + active */
+    $('.topbar .menu a').on('click', function (e) {
+      e.preventDefault();
+
+      const $link = $(this);
+      const targetSel = $link.data('target'); // e.g. "#about"
+
+      $('.topbar .menu a').removeClass('active');
+      $link.addClass('active');
+
+      const $sec = $(targetSel);
+      if ($sec.length) {
+        $('html, body').animate(
+          { scrollTop: $sec.offset().top - 68 },
+          560
+        );
+      }
+    });
+
+    /* Scroll: detect section via data-targets */
+    const $menuLinks = $('.topbar .menu a');
+    const sections = [];
+
+    // Build a clean mapping once
+    $menuLinks.each(function () {
+      const target = $(this).data('target');   // "#hero", "#about", ...
+      const $sec = target ? $(target) : $();
+      if ($sec.length) {
+        sections.push({ target, $sec });
+      }
+    });
+
+    $(window).on('scroll', function () {
+      const scrollPos = $(this).scrollTop();
+      const winHeight = $(this).height();
+      const middleLine = scrollPos + winHeight * 0.35;  // 35% from top
+
+      let currentTarget = null;
+
+      // Pick the last section whose top is above the middle line
+      for (let i = 0; i < sections.length; i++) {
+        const { target, $sec } = sections[i];
+        const top = $sec.offset().top;
+
+        if (middleLine >= top - 80) {          // header offset tolerance
+          currentTarget = target;
+        } else {
+          break;
+        }
+      }
+
+      // If nothing matched but user is at bottom, force last section (Contact)
+      if (!currentTarget && sections.length) {
+        const docBottom = $(window).scrollTop() + winHeight;
+        const docHeight = $(document).height();
+        if (docBottom >= docHeight - 2) {
+          currentTarget = sections[sections.length - 1].target;
+        }
+      }
+
+      if (!currentTarget) return;
+
+      $menuLinks
+        .removeClass('active')
+        .filter('[data-target="' + currentTarget + '"]')
+        .addClass('active');
+    });
+
+
+
+
+
+    // hero down arrow
+    $('#downArrow').on('click', function () {
+      $('html,body').animate({ scrollTop: $('#about').offset().top - 68 }, 650);
+    });
+
+    /* Skills bar fill on reveal */
+    // const skills = document.querySelectorAll('#skills .skill-pill');
+    // const skillsObserver = new IntersectionObserver((entries) => {
+    //   entries.forEach(entry => {
+    //     if (entry.isIntersecting) {
+    //       const val = entry.target.getAttribute('data-val') || '80';
+    //       const fill = entry.target.querySelector('.skill-fill');
+    //       if (fill) fill.style.width = val + '%';
+    //       skillsObserver.unobserve(entry.target);
+    //     }
+    //   });
+    // }, { threshold: 0.25 });
+    // skills.forEach(s => skillsObserver.observe(s));
+
+    const skills = document.querySelectorAll('#skills .skill-pill');
+
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const val = entry.target.getAttribute('data-val') || '80';
+          const fill = entry.target.querySelector('.skill-fill');
+          const label = entry.target.querySelector('.skill-val');
+          if (fill) fill.style.width = val + '%';
+          if (label) label.textContent = val + '%';
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    skills.forEach(s => skillsObserver.observe(s));
+
+    /* Project tab animation */
+    $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+      const pane = $($(e.target).data('bs-target'));
+      pane.find('.project-item').removeClass('show').each(function (i) {
+        const el = $(this);
+        setTimeout(() => el.addClass('show'), i * 90);
+      });
+    });
+    // initial show for first tab
+    $('#projects .tab-pane.active .project-item').each(function (i) { setTimeout(() => $(this).addClass('show'), i * 80); });
+
+    /* HERO canvas: dense network like reference */
+    (function () {
+      const c = document.getElementById('hero-canvas');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+
+      let W = c.width = window.innerWidth;
+      let H = c.height = window.innerHeight;
+
+      const nodes = [];
+      const N = Math.max(80, Math.floor((W * H) / 60000)); // more nodes
+
+      function rand(a, b) { return Math.random() * (b - a) + a }
+
+      for (let i = 0; i < N; i++) {
+        nodes.push({
+          x: rand(0, W),
+          y: rand(0, H),
+          r: rand(0.7, 1.6),
+          vx: rand(-0.25, 0.25),
+          vy: rand(-0.25, 0.25)
+        });
+      }
+
+      window.addEventListener('resize', () => {
+        W = c.width = window.innerWidth;
+        H = c.height = window.innerHeight;
+      });
+
+      function step() {
+        ctx.clearRect(0, 0, W, H);
+
+        // dark background
+        ctx.fillStyle = '#050608';
+        ctx.fillRect(0, 0, W, H);
+
+        // draw more connections
+        for (let i = 0; i < nodes.length; i++) {
+          const a = nodes[i];
+          for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const d = Math.hypot(dx, dy);
+
+            // higher distance and slightly higher alpha → denser mesh
+            if (d < 185) {
+              const alpha = Math.max(0, 0.30 - d / 450);
+              ctx.strokeStyle = 'rgba(180, 180, 190,' + alpha + ')';
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // update + draw nodes
+        nodes.forEach(n => {
+          n.x += n.vx;
+          n.y += n.vy;
+
+          // soft bounce
+          if (n.x < 0 || n.x > W) n.vx *= -1;
+          if (n.y < 0 || n.y > H) n.vy *= -1;
+
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(220, 220, 230, 0.95)';
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        requestAnimationFrame(step);
+      }
+
+      step();
+    })();
+
+
+    /* Micro interactions */
+    $(document).on('mouseenter', '.project-item', function () { $(this).css({ transform: 'translateY(-10px)', boxShadow: '0 18px 40px rgba(0,0,0,0.06)' }); });
+    $(document).on('mouseleave', '.project-item', function () { $(this).css({ transform: 'none', boxShadow: 'none' }); });
+
+    /* Ensure sections visible if user lands with hash */
+    $(function () { if (window.location.hash) { const h = window.location.hash; if ($(h).length) { $('html,body').animate({ scrollTop: $(h).offset().top - 72 }, 200); } } });
+  </script>
+</body>
+
+</html>
