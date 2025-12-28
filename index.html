@@ -5,973 +5,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sunil Kumar P M - Portfolio</title>
-
   <link href="favicon.ico" rel="shortcut icon" />
   <!-- Bootstrap -->
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800" rel="stylesheet">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Athiti:300,400,500,600" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Athiti:wght@500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --black: #000;
-      --white: #fff;
-      --steel: SteelBlue;
-      --muted: #6b7280;
-      --glass: rgba(255, 255, 255, 0.04);
-      --container-max: 1100px;
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color: var(--black);
-      background: var(--white);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ---------- NAV ---------- */
-    .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 60;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 28px;
-      background: #000000;
-      backdrop-filter: blur(4px);
-      /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
-    }
-
-    /* .logo {
-      font-weight: 800;
-      font-size: 18px;
-      color: var(--black)
-    } */
-
-    .menu a {
-      margin-left: 18px;
-      color: #fff !important;
-      /* font-weight: 600; */
-      cursor: pointer;
-      text-decoration: none;
-      font-family: 'Athiti', sans-serif;
-    }
-
-    .menu a:hover {
-      color: var(--steel);
-      transform: translateY(-2px);
-      border-bottom: 4px solid steelblue;
-      /* animation: ease-in 1.0s linear; */
-      transition: ease 0.1s;
-    }
-
-    .menu a.active {
-      color: var(--steel);
-      transform: translateY(-2px);
-      border-bottom: 4px solid steelblue;
-    }
-
-    .menu a.active::after {
-      color: var(--steel);
-      transform: translateY(-2px);
-      border-bottom: 4px solid steelblue;
-    }
-
-
-    @media(max-width:768px) {
-      .menu {
-        display: none
-      }
-    }
-
-    /* ---------- HERO (black) ---------- */
-    #hero {
-      height: 100vh;
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--black);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* animated nodes + soft glow */
-    #hero-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 1
-    }
-
-    .hero-glow {
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      width: 780px;
-      height: 420px;
-      transform: translateX(-50%) translateY(-20%);
-      background: radial-gradient(circle, rgba(70, 130, 180, 0.16) 0%, rgba(0, 0, 0, 0) 60%);
-      filter: blur(32px);
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-center {
-      position: relative;
-      z-index: 4;
-      text-align: center;
-      color: var(--white);
-      max-width: 900px;
-      padding: 34px
-    }
-
-    /* .hero-name {
-      font-size: 56px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 6px
-    } */
-
-    .hero-name {
-      color: #fff;
-      font-family: "Raleway", sans-serif;
-      letter-spacing: 1px;
-      font-size: 100px;
-      font-weight: bold;
-    }
-
-    /* .hero-title {
-      font-size: 20px;
-      color: #cfe9ff;
-      font-weight: 600
-    } */
-
-    .hero-title {
-      font-size: 23px;
-      line-height: 30px;
-      font-family: 'Athiti', sans-serif;
-    }
-
-    /* .down-arrow {
-      position: absolute;
-      bottom: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 6;
-      cursor: pointer
-    }
-
-    .down-arrow i {
-      font-size: 46px;
-      color: var(--white);
-      animation: arrowPulse 1.6s infinite
-    } */
-
-    .down-arrow {
-      position: absolute;
-      bottom: 22px;
-      left: auto;
-      transform: translateX(-50%);
-      z-index: 6;
-      cursor: pointer;
-      /* animation: arrowPulse 0.5s infinite ease-in-out; */
-      animation: arrowPulse 1.2s infinite linear;
-      /* border: 2px solid red; Remove after confirming */
-    }
-
-    .down-arrow i {
-      font-size: 46px;
-      color: #fff;
-      display: block;
-    }
-
-
-    @keyframes arrowPulse {
-
-      0%,
-      100% {
-        transform: translateX(-50%) translateY(0);
-      }
-
-      50% {
-        transform: translateX(-50%) translateY(20px);
-      }
-    }
-
-
-    /* @keyframes arrowPulse {
-      0% {
-        transform: translateY(0)
-      }
-
-      50% {
-        transform: translateY(12px)
-      }
-
-      100% {
-        transform: translateY(0)
-      }
-    }
-
-    @keyframes arrowPulse {
-      0% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(15px);
-      }
-
-      100% {
-        transform: translateY(0);
-      }
-    } */
-
-    @keyframes arrowPulse {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: translateY(0);
-      }
-
-      40% {
-        transform: translateY(-10px);
-      }
-
-      60% {
-        transform: translateY(10px);
-      }
-    }
-
-
-
-    /* ---------- SECTION BASE ---------- */
-    section {
-      padding: 65px 18px;
-      background: var(--white);
-      transition: all .7s ease;
-      opacity: 0;
-      transform: translateY(30px);
-      /* margin-bottom: 20px; */
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: none
-    }
-
-    .container-narrow {
-      max-width: var(--container-max);
-      margin: 0 auto
-    }
-
-    /* subtle separators */
-    .section-sep {
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-    }
-
-    /* h2.section-title {
-      font-size: 30px;
-      font-weight: 800;
-      margin-bottom: 18px
-    } */
-
-    .section-title {
-      position: relative;
-      /* display: inline-block; */
-      display: block;
-      font-family: "Raleway", sans-serif;
-      font-size: 36px;
-      font-weight: 800;
-      text-transform: capitalize;
-      color: #000;
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    /* grey line */
-    .section-title::after {
-      content: "";
-      height: 1px;
-      width: 90px;
-      background: #9c9c9c;
-      position: absolute;
-      bottom: -6px;
-      left: calc(50% - 45px);
-      z-index: 1;
-    }
-
-    /* blue pill centered on the line, but a bit taller so grey is still visible */
-    .section-title::before {
-      content: "";
-      position: absolute;
-      background: steelblue;
-      bottom: -8px;
-      left: calc(50% - 10px);
-      height: 6px;
-      width: 20px;
-      z-index: 2;
-    }
-
-
-
-
-    /* .section-title h2:after {
-  content: "";
-  height: 1px;
-  width: 90px;
-  background: #9c9c9c;
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 45px);
-  z-index: 1;
-}
-
-.section-title h2:before {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: calc(50% - 10px);
-  height: 6px;
-  width: 20px;
-  z-index: 2;
-} */
-
-    p.lead-muted {
-      font-size: 17px;
-      color: #777777;
-      line-height: 30px;
-      font-family: 'Athiti', sans-serif;
-      text-align: center;
-    }
-
-    /* ---------- ABOUT ---------- */
-    .about-card {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      flex-wrap: wrap
-    }
-
-    .about-pic {
-      width: 220px;
-      height: auto;
-      border-radius: 16px;
-      overflow: hidden;
-      /* border: 3px solid var(--steel); */
-      flex: 0 0 220px
-    }
-
-    .about-pic img,
-    .project-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 250px
-    }
-
-    /* ---------- SKILLS ---------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px 48px;
-    }
-
-    .skill-pill {
-      position: relative;
-      font-size: 14px;
-    }
-
-    .skill-title {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .skill-bar {
-      position: relative;
-      height: 6px;
-      background: #e5e5e5;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      width: 0;
-      background: steelblue;
-      border-radius: inherit;
-      transition: width 1.2s ease-out;
-    }
-
-    /* percentage label on the right, like in your screenshot */
-    .skill-val {
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform: translateY(39%);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
-    /* .skills-grid {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap
-    }
-
-    .skill-pill {
-      flex: 1;
-      min-width: 180px;
-      padding: 14px;
-      border-radius: 10px;
-      background: linear-gradient(180deg, #fff, #fbfbfb);
-      border: 1px solid rgba(0, 0, 0, 0.04)
-    }
-
-    .skill-title {
-      font-weight: 700;
-      margin-bottom: 8px
-    }
-
-    .skill-bar {
-      height: 10px;
-      background: #e9eef7;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 8px
-    }
-
-    .skill-fill {
-      height: 100%;
-      width: 0;
-      background: var(--steel);
-      transition: width 1.4s cubic-bezier(.2, .9, .2, 1)
-    } */
-
-    /* ---------- WHAT I DO (cards aligned 3 per row) ---------- */
-
-    #do {
-      background: whitesmoke;
-    }
-
-    #do .card {
-      border-radius: 14px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: all .45s cubic-bezier(.2, .9, .2, 1);
-      background: linear-gradient(180deg, #fff, #fbfdff);
-    }
-
-    #do .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 18px 40px rgba(70, 130, 180, 0.08)
-    }
-
-    .card .icon {
-      font-size: 34px;
-      color: var(--steel);
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .card h5 {
-      font-weight: 800;
-      margin-bottom: 8px;
-      text-align: center
-    }
-
-    /* ensure three in a row */
-    @media(min-width:992px) {
-      .do-col {
-        flex: 0 0 32%;
-        max-width: 32%
-      }
-    }
-
-    @media(max-width:991px) {
-      .do-col {
-        flex: 0 0 48%;
-        max-width: 48%;
-        margin-bottom: 12px
-      }
-    }
-
-    @media(max-width:575px) {
-      .do-col {
-        flex: 0 0 100%;
-        max-width: 100%
-      }
-    }
-
-    /* ---------- EXPERIENCE (timeline split + connectors) ---------- */
-    .timeline {
-      max-width: var(--container-max);
-      margin: 0 auto;
-      position: relative;
-      padding-left: 0
-    }
-
-    /* central vertical line positioned relative to container width */
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 36%;
-      top: 20px;
-      bottom: 20px;
-      width: 1px;
-      background: linear-gradient(180deg, var(--steel), rgba(70, 130, 180, 0.6));
-      transform: translateX(-50%);
-      border-radius: 6px;
-      z-index: 1;
-    }
-
-    .timeline-block {
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-      /* margin-bottom: 34px; */
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
-      padding-top: 12px;
-      padding-bottom: 12px
-    }
-
-    .timeline-left {
-      flex: 0 0 36%;
-      max-width: 36%;
-      text-align: right;
-      padding-right: 20px
-    }
-
-    .timeline-left .company {
-      font-weight: 800;
-      font-size: 16px;
-      font-family: "Raleway", sans-serif;
-    }
-
-    .timeline-left .period {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 6px;
-      font-family: 'Athiti', sans-serif;
-    }
-
-    .timeline-right {
-      flex: 1;
-      min-width: 260px;
-      padding-left: 28px
-    }
-
-    .timeline-right .role {
-      font-size: 16px;
-      font-weight: bold;
-      color: var(--steel);
-      margin-bottom: 6px;
-      font-family: "Raleway", sans-serif;
-    }
-
-    .timeline-right .desc {
-      /* color: #333; */
-      color: #333333e3;
-      line-height: 1.65;
-      font-family: 'Athiti', sans-serif;
-    }
-
-    /* circular marker for each timeline-block */
-    .timeline-block::after {
-      content: '';
-      position: absolute;
-      left: calc(36% - 11px);
-      top: 18px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--steel);
-      border: 3px solid var(--white);
-      box-shadow: 0 0 16px rgba(70, 130, 180, 0.45);
-      transform: scale(0.8);
-      opacity: 0;
-      transition: all .45s cubic-bezier(.2, .9, .2, 1);
-    }
-
-    /* show/pop marker when block enters view (we add .show-marker via JS) */
-    .timeline-block.show-marker::after {
-      transform: scale(1);
-      opacity: 1
-    }
-
-    /* ---------- PROJECTS (tabs + grid 3 per row) ---------- */
-    .nav-projects .nav-link {
-      border-radius: 12px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      margin: 0 8px;
-      padding: 10px 18px;
-      font-weight: 700
-    }
-
-    .nav-projects .nav-link.active {
-      background: var(--steel);
-      color: var(--white) !important
-    }
-
-    .project-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px
-    }
-
-    .project-item {
-      flex: 0 0 32%;
-      max-width: 32%;
-      background: #fafafa;
-      border: 2px solid rgba(0, 0, 0, 0.04);
-      height: 200px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #666
-    }
-
-    @media(max-width:991px) {
-      .project-item {
-        flex: 0 0 48%;
-        max-width: 48%
-      }
-    }
-
-    @media(max-width:575px) {
-      .project-item {
-        flex: 0 0 100%;
-        max-width: 100%
-      }
-    }
-
-    /* ---------- CONTACT ---------- */
-    #contact {
-      background: var(--black);
-      color: var(--white);
-      padding-top: 54px;
-      padding-bottom: 54px
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 26px;
-      justify-content: center
-    }
-
-    .contact-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--steel);
-      font-size: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all .25s
-    }
-
-    .contact-links a:hover {
-      transform: translateY(-6px);
-      background: var(--steel);
-      color: var(--white)
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: var(--white);
-      padding: 18px 12px;
-      border-top: 2px solid rgba(0, 0, 0, 0.04);
-      text-align: center
-    }
-
-    /* ---------- MICRO ANIMATIONS ---------- */
-    .float-up {
-      transform: translateY(14px);
-      opacity: 0;
-      transition: all .6s ease
-    }
-
-    .float-up.show {
-      transform: none;
-      opacity: 1
-    }
-
-    .fade-scale {
-      opacity: 0;
-      transform: scale(.98);
-      transition: all .6s ease
-    }
-
-    .fade-scale.show {
-      opacity: 1;
-      transform: none
-    }
-
-    .topbar .logo {
-      display: inline-block;
-      float: left;
-    }
-
-    .topbar .logo a span {
-      color: steelblue;
-    }
-
-    .topbar .logo a {
-      color: #fff;
-      font-size: 38px;
-      line-height: 38px;
-      font-weight: 800;
-      font-family: "Raleway", sans-serif;
-      text-decoration: none;
-    }
-
-    /* tabs */
-    /* Card container */
-    .project-card {
-      position: relative;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      transform: translateY(0);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    /* Simple entrance animation when tab changes */
-    .tab-pane.show .project-card {
-      animation: fadeUp 0.45s ease;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hover lift */
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      font-family: 'Athiti', sans-serif;
-    }
-
-    /* Hover overlay */
-    .project-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: transform 0.35s ease;
-    }
-
-    .project-card:hover img {
-      transform: scale(1.04);
-    }
-
-    .project-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(81, 78, 168, 0.78);
-      /* purple-like overlay */
-      color: #fff;
-      opacity: 0;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      transform: translateY(10%);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .project-overlay h5 {
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .project-overlay p {
-      margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.4;
-    }
-
-    /* Reveal overlay on hover */
-    .project-card:hover .project-overlay {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Tabs styling tweak */
-    .nav-tabs .nav-link {
-      border: none;
-      border-bottom: 2px solid transparent;
-      font-weight: 600;
-      color: #555;
-    }
-
-    .nav-tabs .nav-link.active {
-      color: #000;
-      border-bottom-color: #337ab7;
-    }
-
-    @media(min-width:320px) and (max-width:767px) {
-
-      .hero-name {
-        font-size: 40px;
-      }
-
-      /* .hero-title {
-        font-size: 25px;
-      } */
-
-      .lead-muted {
-        font-size: 17px;
-      }
-
-      .about-card {
-        justify-content: center;
-      }
-
-      p.lead-muted {
-        font-size: 18px;
-      }
-
-      .timeline-left .company{
-        font-size: 18px;
-      }
-
-      .timeline-right .role{
-        font-size: 18px;
-      }
-
-      .timeline-right .desc{
-        font-size: 17px;
-      }
-
-      .timeline-left .period{
-        font-size: 14px;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-      }
-
-      .timeline::before {
-        display: none;
-      }
-
-      .timeline-block::after {
-        display: none;
-      }
-
-      .timeline-left {
-        flex: auto;
-        max-width: fit-content;
-        text-align: start;
-        padding-right: 0px;
-      }
-
-      .timeline-right {
-        flex: 0;
-        min-width: fit-content;
-        padding-left: 0px;
-      }
-
-      .nav-tabs .nav-link {
-        font-size: 15px;
-      }
-
-      #modalDesc {
-        font-size: 15px;
-      }
-
-      .contact-links a {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-      }
-
-      .contact-body {
-        font-size: 13px;
-      }
-    }
-
-    @media(min-width:768px) and (max-width:1080px) {
-
-      .hero-name {
-        font-size: 75px;
-      }
-
-      .lead-muted {
-        font-size: 17px;
-      }
-
-      .about-card {
-        justify-content: center;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    #modalDesc {
-      font-family: 'Athiti', sans-serif;
-    }
-
-    .modal-title {
-      color: steelblue;
-      font-weight: 700;
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="index.css" />
 </head>
 
 <body>
-
-  <!-- NAV -->
   <div class="topbar">
     <div class="logo">
-      <!-- Logo -->
       <a href="#">S
         <span>U</span>N
         <span>I</span>L</a>
     </div>
-    <!-- <div class="logo">Sunil — Technical Lead</div> -->
     <div class="menu">
       <a data-target="#hero" class="active">Home</a>
       <a data-target="#about">About</a>
@@ -982,11 +33,9 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <section id="hero" aria-label="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-glow"></div>
-
     <div class="hero-center">
       <div class="hero-panel fade-scale">
         <div class="hero-name">Sunil Kumar P M</div>
@@ -995,48 +44,40 @@
           engineering teams and implement secure scalable systems.</div>
       </div>
     </div>
-
     <div class="down-arrow" id="downArrow" title="Scroll to About">
       <i class="bi bi-arrow-down-circle"></i>
     </div>
   </section>
 
-  <!-- ABOUT (white) -->
   <section id="about" class="section-sep">
     <div class="container pt100 pb65">
       <h2 class="text-center section-title">About Me</h2>
       <div class="d-flex align-items-center about-card">
-        <div class="about-pic shadow-sm"><img src="sunil-profile-pic.jpg" alt="Profile">
+        <div class="about-pic shadow-sm"><img src="./img/sunil-profile-pic.jpg" alt="Profile">
         </div>
         <div class="about-text">
-          <!-- <p class="lead-muted" style="text-align: left;"><b>AI-Powered Full Stack Engineer</b> with an unrelenting
-            passion for crafting elegant,
-            rich user
-            experiences using modern frameworks and Libraries. I thrive on transforming complex problems
-            into intuitive, dynamic designs through cutting-edge effects and seamless interactions. As a Technical Lead,
-            I architect scalable software solutions, mentor engineering teams and drive innovation across the full
-            development lifecycle—from concept to deployment.
-            My expertise spans <b>Software Architecture</b>, where I design robust, enterprise-grade systems that
-            balance performance, scalability and maintainability. With <b>9+</b> years of experience, I've led
-            AI-powered
-            projects, implemented DevOps pipelines and delivered high impact solutions across diverse domains including
-            Automotive, Cybersecurity, Semiconductor and Banking.
-            When not architecting the next breakthrough or mentoring teams, I cherish deep connections with my family
+          <p class="lead-muted" style="text-align: left;">I am a <b>Technical Lead</b> and <b>Architect</b> with over
+            <b>9</b> years of experience building high-stakes software across diverse industries—from Cybersecurity and
+            Scientific Simulations to my most recent 5-year tenure within a Tier-1 Automotive organization.
+            I thrive at the intersection of complex system architecture and high-performance team leadership. My journey
+            has evolved from mastering deep technical domains to spearheading organizational-wide digital
+            transformations. I specialize in designing high-concurrency distributed systems and integrating
+            enterprise-grade AI frameworks (RAG, LLMs) into mission-critical toolchains.
+            I bridge the gap between high-level vision and ground-level execution, working closely with Release Train
+            Architects to build scalable, "future-proof" infrastructures.
+            <br>
+            As a recognized "Key Player" and nominated Subject Matter Expert, I pride myself on being a force
+            multiplier—mentoring engineers and fostering a culture of technical excellence.
+            Whether it’s architecting database clusters or centralizing AI assistants, I focus on solving problems that
+            impact thousands of users and cross-functional teams.
+            I believe that great software isn't just about clean code, it’s about aligning technical strategy with
+            business goals to build products that are as stable as they are innovative.
+            <br>
+            When not architecting or mentoring, I cherish deep connections with my family
             and friends. I step away from social media to meet people face-to-face, enjoying real conversations and
-            building authentic relationships that energize my collaborative approach to innovation.</p> -->
-            <p class="lead-muted" style="text-align: left;">I am a <b>Technical Lead</b> and <b>Architect</b> with over <b>9</b> years of experience building high-stakes software across diverse industries—from Cybersecurity and Scientific Simulations to my most recent 5-year tenure within a Tier-1 Automotive organization.
-
-I thrive at the intersection of complex system architecture and high-performance team leadership. My journey has evolved from mastering deep technical domains to spearheading organizational-wide digital transformations. I specialize in designing high-concurrency distributed systems and integrating enterprise-grade AI frameworks (RAG, LLMs) into mission-critical toolchains.
-I bridge the gap between high-level vision and ground-level execution, working closely with Release Train Architects to build scalable, "future-proof" infrastructures.
-As a recognized "Key Player" and nominated Subject Matter Expert, I pride myself on being a force multiplier—mentoring engineers and fostering a culture of technical excellence.
-Whether it’s architecting sharded database clusters or centralizing AI assistants through Model Context Protocols (MCP), I focus on solving problems that impact thousands of users and cross-functional teams.
-I believe that great software isn't just about clean code; it’s about aligning technical strategy with business goals to build products that are as stable as they are innovative.
-<br>
-When not architecting the next breakthrough or mentoring teams, I cherish deep connections with my family
-            and friends. I step away from social media to meet people face-to-face, enjoying real conversations and
-            building authentic relationships that energize my collaborative approach to innovation.</p>
+            building authentic relationships that energize my collaborative approach to innovation.
+          </p>
           <div class="mt-3">
-            <!-- <button class="btn btn-outline-dark me-2">Download Resume</button> -->
             <a class="btn btn-primary" href="#contact"
               style="background:var(--steel);border-color:var(--steel);border-radius:20px">Contact</a>
           </div>
@@ -1045,290 +86,31 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="section-sep">
     <div class="container pt100 pb65">
       <h2 class="section-title">Skillsets</h2>
-      <div class="skills-grid mt-3">
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">RAG</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="90">
-          <div class="skill-title">JavaScript</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">90%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="95">
-          <div class="skill-title">Angular</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">95%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="92">
-          <div class="skill-title">React</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">92%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">Redux</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">jQuery</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="95">
-          <div class="skill-title">Web Design</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">95%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="90">
-          <div class="skill-title">D3.JS / Chart.JS / HighCharts</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">90%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">Unit Test</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="90">
-          <div class="skill-title">Python</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">90%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="90">
-          <div class="skill-title">Mongo DB</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">90%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">Django & DRF</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="85">
-          <div class="skill-title">Cloud & DevOps</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">85%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="80">
-          <div class="skill-title">System Architecture</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">80%</div> <!-- add this -->
-        </div>
-        <div class="skill-pill fade-scale" data-val="50">
-          <div class="skill-title">Machine Learning</div>
-          <div class="skill-bar">
-            <div class="skill-fill"></div>
-          </div>
-          <div class="skill-val">50%</div> <!-- add this -->
-        </div>
-      </div>
+      <div class="skills-grid mt-3"></div>
     </div>
   </section>
 
-  <!-- WHAT I DO -->
   <section id="do" class="section-sep">
     <div class="container pt100 pb65">
       <h2 class="text-center section-title">What I do?</h2>
-      <!-- Responsive 3-per-row alignment -->
-      <div class="d-flex flex-wrap" style="gap:18px;">
-        <div class="do-col">
-          <div class="card p-4 fade-scale">
-            <div class="icon"><i class="bi bi-robot"></i></div>
-            <h5>AI & Innovation</h5>
-            <p class="lead-muted">Creating advanced RAG pipeline</p>
-          </div>
-        </div>
-
-        <div class="do-col">
-          <div class="card p-4 fade-scale">
-            <div class="icon"><i class="bi bi-gear icon"></i></div>
-            <h5>System Design & Architecture</h5>
-            <p class="lead-muted">Designing resilient microservices and scalable data flows.</p>
-          </div>
-        </div>
-
-        <div class="do-col">
-          <div class="card p-4 fade-scale">
-            <div class="icon"><i class="bi bi-people icon"></i></div>
-            <h5>Team Leadership</h5>
-            <p class="lead-muted">Mentoring, code quality, process and delivery ownership.</p>
-          </div>
-        </div>
-      </div>
+      <div id='what-i-do' class="d-flex flex-wrap" style="gap:18px;"></div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience" class="section-sep">
     <div class="container pt100 pb65">
       <h2 class="section-title">Experience</h2>
-
-      <div class="timeline fade-scale" id="timelineRoot">
-
-        <div class="timeline-block">
-          <div class="timeline-left">
-            <div class="company">Continental AG (Aumovio SE)</div>
-            <div class="period">Jan 2024 — Present</div>
-          </div>
-          <div class="timeline-right">
-            <div class="role">Technical Lead</div>
-            <div class="desc">Strategic Technical Lead driving architectural excellence and AI innovation within a Global Business Unit. Act as the primary technical authority for toolchain transformation, bridging the gap between high-level architectural design and team execution.
-<br><b>Architectural Leadership:</b> Collaborate with Release Train Architects to design and document 20+ complex backend systems using PlantUML. Spearheading the "One-Database-One-Tool-Chain" initiative for organizational standardization.
-<br><b>System Scalability & Optimization:</b> Architected a highly scalable MongoDB Sharded Cluster on AWS to handle 1M+ daily records; engineered a Python-based Jira Data Processing library utilizing multi-threading and batch processing to reduce latency by 70%.
-<br><b>AI & Innovation:</b> Tool Owner for an AI-powered application, implementing an advanced RAG (Retrieval-Augmented Generation) pipeline. Currently collaborating with Global AI teams to develop a Model Context Protocol (MCP) for centralized AI assistants.
-<br><b>Technical Force Multiplier:</b> Nominated as "Expert" for Application Tools Development. Educated cross-functional teams of 50–3000 members through Tech Talks on topics like ‘Smarter Data Processing’, ‘Database Scaling’.
-<br><b>Quality Engineering:</b> Developed automated GitHub extraction scripts for Global Quality teams.
-<br><b>Technical Infrastructure & DevOps:</b> Optimized cloud infrastructure on AWS EC2 along with GPU configuration. Designed and deployed CI/CD pipelines in Jenkins with advanced static code analysis (SonarQube, Pylint).
-<br><b>Leadership & Mentorship:</b> Mentored and onboarded junior engineers. Conducted technical knowledge sessions and product demos at company-wide engineering events. Awarded for engineering excellence and technical leadership contributions.</div>
-          </div>
-        </div>
-
-        <div class="timeline-block">
-          <div class="timeline-left">
-            <div class="company">Continental AG</div>
-            <div class="period">Jul 2021 — Jan 2024</div>
-          </div>
-          <div class="timeline-right">
-            <div class="role">Technical Specialist</div>
-            <div class="desc">Lead Technical Specialist responsible for the end-to-end ownership and modernization of organization-wide enterprise applications.
-<br>
-<b>Product Ownership:</b> Managed the full SDLC for two critical internal tools, facilitating stakeholder requirements, sprint planning, and successful on-time delivery.
-<br>
-<b>UI/UX Modernization:</b> Led the complete UI revamp of legacy systems using modern frontend stacks, resulting in significant improvements in load times, system stability, and user satisfaction.
-<br>
-<b>Stakeholder Alignment:</b> Acted as the technical bridge for global stakeholders, translating complex business needs into actionable technical roadmaps and implementation plans.
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-left">
-              <div class="company">Aujas Cybersecurity Ltd (NSE Company)</div>
-              <div class="period">Dec 2018 — Jul 2021</div>
-            </div>
-            <div class="timeline-right">
-              <div class="role">Software Engineer - UI</div>
-              <div class="desc">Worked as a Senior Engineer in the CyberSecurity domain, leading UI development for
-                IBM
-                QRadar applications using the latest versions of Angular and React. Designed and implemented
-                interactive,
-                dynamically reusable UI components and addressed web application security issues through secure
-                encoding
-                practices, XSS prevention, data encryption and related standards. Developed reusable charting services
-                with D3.js, Chart.js and Highcharts and routinely wrote unit tests for UI components using Jasmine and
-                Jest to ensure code quality and reliability.</div>
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-left">
-              <div class="company">ASM Technologies Ltd</div>
-              <div class="period">Aug 2017 — Dec 2018</div>
-            </div>
-            <div class="timeline-right">
-              <div class="role">Software Engineer - Full Stack</div>
-              <div class="desc">Was responsible for full-stack development using Angular, Python-Django, PostgreSQL
-                and
-                AWS. Reported directly to the VP of Technology, worked within an Agile process and collaborated
-                closely
-                with backend and UX teams across Russia, the USA, the Netherlands and other countries. Served on the
-                technical interview panel and contributed as an engineer in the ASM product team, focusing on R&D for
-                platforms related to the Internet of Things (IoT) and On-Board Diagnostics (OBD).</div>
-            </div>
-          </div>
-
-          <div class="timeline-block">
-            <div class="timeline-left">
-              <div class="company">Gowdanar Technologies Pvt Ltd</div>
-              <div class="period">Aug 2016 — Aug 2017</div>
-            </div>
-            <div class="timeline-right">
-              <div class="role">Software Engineer</div>
-              <div class="desc">Led end-to-end UI development using AngularJS, designing multiple responsive
-                dashboards
-                optimized for smartphones and tablets. Reported directly to the CTO, rapidly translating online
-                designs
-                into production-ready interfaces and implementing the admin UI with robust role-based access controls.
-                Mentored and guided designers and front-end developers on cross-browser compatibility and responsive
-                web
-                design best practices, while optimizing the application build process with Grunt and providing
-                frontend
-                technical leadership to the team.</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="timeline fade-scale" id="timelineRoot"></div>
+    </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="section-sep">
-    <div class="container pt100 pb65">
+    <div id="project-container" class="container pt100 pb65">
       <h2 class="section-title">Projects</h2>
-      <!-- Tabs -->
-      <ul class="nav nav-tabs justify-content-center mb-4" id="portfolioTabs" role="tablist">
-        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all">All</button>
-        </li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-            data-bs-target="#tab-learning">Learning</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-            data-bs-target="#tab-banking">Banking</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-            data-bs-target="#tab-semiconductor">Semiconductor</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-            data-bs-target="#tab-scientific">Scientific</button></li>
-      </ul>
-
-      <!-- One container per tab, cards created from JS config -->
-      <div class="tab-content">
-        <div class="tab-pane fade show active" id="tab-all">
-          <div class="row g-4" id="grid-all"></div>
-        </div>
-        <div class="tab-pane fade" id="tab-learning">
-          <div class="row g-4" id="grid-learning"></div>
-        </div>
-        <div class="tab-pane fade" id="tab-banking">
-          <div class="row g-4" id="grid-banking"></div>
-        </div>
-        <div class="tab-pane fade" id="tab-semiconductor">
-          <div class="row g-4" id="grid-semiconductor"></div>
-        </div>
-        <div class="tab-pane fade" id="tab-scientific">
-          <div class="row g-4" id="grid-scientific"></div>
-        </div>
-      </div>
+      <ul class="nav nav-tabs justify-content-center mb-4" id="portfolioTabs" role="tablist"></ul>
     </div>
 
     <!-- Modal -->
@@ -1345,9 +127,8 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
           </div>
         </div>
       </div>
-
-
     </div>
+
     </div>
   </section>
 
@@ -1355,35 +136,27 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
   <section id="contact">
     <div class="container pt100 pb65 text-center">
       <h2 class="section-title" style="color:var(--white)">Get in Touch</h2>
-
       <div class="container contact-body">
         <div class="row">
-
-          <!-- Contact Info -->
           <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.2s">
             <i class="bi bi-telephone"></i>
             <p>(91) 8746083834
               <br>(91) 9113220074
             </p>
           </div>
-          <!-- Contact Info -->
           <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.4s">
             <i class="bi bi-geo-alt-fill"></i>
             <p>Vidyaranyapura
               <br>Bangalore, KA, India
             </p>
           </div>
-          <!-- Contact Info -->
           <div class="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.6s">
             <i class="bi bi-envelope"></i>
             <p>sunilkumarpm01@gmail.com</p>
           </div>
-
         </div>
       </div>
       <br></br>
-      <!-- <div class="mb-3" style="color:rgba(255,255,255,0.72)">Connect with me on</div> -->
-
       <div class="contact-links">
         <a href="https://in.linkedin.com/in/sunil-kumar-p-m-3b493810a" target="_blank" title="LinkedIn"><i
             class="bi bi-linkedin"></i></a>
@@ -1391,7 +164,6 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
       </div>
     </div>
   </section>
-
   <footer class="text-center">
     <div class="container pt100 pb65 py-2">
       <small style="font-family: 'Athiti', sans-serif;font-weight: 500;">Copyright © Sunil Kumar P M <span
@@ -1402,40 +174,209 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-
   <script>
 
-    // Single source of truth for items
+    // dynamic skills
+    const skill_array = [
+      { name: 'RAG', value: 85 },
+      { name: 'JavaScript', value: 90 },
+      { name: 'Angular', value: 95 },
+      { name: 'React', value: 92 },
+      { name: 'Redux', value: 85 },
+      { name: 'jQuery', value: 85 },
+      { name: 'Web Design', value: 95 },
+      { name: 'D3.JS / Chart.JS / HighCharts', value: 90 },
+      { name: 'Unit Test', value: 85 },
+      { name: 'Python', value: 90 },
+      { name: 'Mongo DB', value: 90 },
+      { name: 'Django & DRF', value: 85 },
+      { name: 'Cloud & DevOps', value: 85 },
+      { name: 'Software Architecture', value: 80 },
+      { name: 'Machine Learning', value: 50 }
+    ];
+
+    const skill_container = document.querySelector('.skills-grid');
+    skill_array.forEach(skill => {
+      const pill = document.createElement('div');
+      pill.className = 'skill-pill fade-scale';
+      pill.setAttribute('data-val', skill.value);
+      pill.innerHTML = `<div class="skill-title">${skill.name}</div>
+          <div class="skill-bar">
+            <div class="skill-fill"></div>
+          </div>
+          <div class="skill-val">${skill.value}%</div>`;
+      skill_container.appendChild(pill);
+    });
+
+    // what i do
+    const do_array = [
+      { title: 'AI & Innovation', descr: 'Creating advanced RAG pipeline', icon: 'bi bi-robot' },
+      { title: 'System Design & Architecture', descr: 'Designing resilient microservices and scalable data flows.', icon: 'bi bi-gear icon' },
+      { title: 'Team Leadership', descr: 'Mentoring, code quality, process and delivery ownership.', icon: 'bi bi-people icon' }
+    ];
+    do_container = document.querySelector('#what-i-do');
+    do_array.forEach(do_item => {
+      const col = document.createElement('div');
+      col.className = "do-col";
+      col.innerHTML = `<div class="card p-4 fade-scale">
+         <div class="icon"><i class="${do_item.icon}"></i></div>
+          <h5>${do_item.title}</h5>
+         <p class="lead-muted">${do_item.descr}</p>
+        </div>`;
+      do_container.appendChild(col);
+    })
+
+    //time-lines
+    time_line_array = [
+      {
+        company: 'Continental AG (Aumovio SE)', period: 'Jan 2024 — Present', role: 'Technical Lead',
+        desc: `Strategic Technical Lead driving architectural excellence and AI innovation within a
+              Global Business Unit. Act as the primary technical authority for toolchain transformation, bridging the
+              gap between high-level architectural design and team execution.
+              <br><b>Architectural Leadership:</b> Collaborate with Release Train Architects to design and document 20+
+              complex backend systems using PlantUML. Spearheading the "One-Database-One-Tool-Chain" initiative for
+              organizational standardization.
+              <br><b>System Scalability & Optimization:</b> Architected a highly scalable MongoDB Sharded Cluster on AWS
+              to handle 1M+ daily records; engineered a Python-based Jira Data Processing library utilizing
+              multi-threading and batch processing to reduce latency by 70%.
+              <br><b>AI & Innovation:</b> Tool Owner for an AI-powered application, implementing an advanced RAG
+              (Retrieval-Augmented Generation) pipeline. Currently collaborating with Global AI teams to develop a Model
+              Context Protocol (MCP) for centralized AI assistants.
+              <br><b>Technical Force Multiplier:</b> Nominated as "Expert" for Application Tools Development. Educated
+              cross-functional teams of 50–3000 members through Tech Talks on topics like ‘Smarter Data Processing’,
+              ‘Database Scaling’.
+              <br><b>Quality Engineering:</b> Developed automated GitHub extraction scripts for Global Quality teams.
+              <br><b>Technical Infrastructure & DevOps:</b> Optimized cloud infrastructure on AWS EC2 along with GPU
+              configuration. Designed and deployed CI/CD pipelines in Jenkins with advanced static code analysis
+              (SonarQube, Pylint).
+              <br><b>Leadership & Mentorship:</b> Mentored and onboarded junior engineers. Conducted technical knowledge
+              sessions and product demos at company-wide engineering events. Awarded for engineering excellence and
+              technical leadership contributions.`
+      },
+      {
+        company: 'Continental AG', period: 'Jul 2021 — Dec 2023', role: 'Technical Specialist',
+        desc: `Lead Technical Specialist responsible for the end-to-end ownership and modernization of
+              organization-wide enterprise applications.
+              <br>
+              <b>Product Ownership:</b> Managed the full SDLC for two critical internal tools, facilitating stakeholder
+              requirements, sprint planning, and successful on-time delivery.
+              <br>
+              <b>UI/UX Modernization:</b> Led the complete UI revamp of legacy systems using modern frontend stacks,
+              resulting in significant improvements in load times, system stability, and user satisfaction.
+              <br>
+              <b>Stakeholder Alignment:</b> Acted as the technical bridge for global stakeholders, translating complex
+              business needs into actionable technical roadmaps and implementation plans.`
+      },
+      {
+        company: 'Aujas Cybersecurity Ltd (NSE Company)', period: 'Dec 2018 — Jul 2021', role: 'Software Engineer - UI',
+        desc: `Worked as a Senior Engineer in the CyberSecurity domain, leading UI development for IBM QRadar applications
+         using the latest versions of Angular and React. Designed and implemented interactive,dynamically reusable UI 
+         components and addressed web application security issues through secure encoding practices, XSS prevention, 
+         data encryption and related standards. Developed reusable charting services with D3.js, Chart.js and Highcharts 
+         and routinely wrote unit tests for UI components using Jasmine and Jest to ensure code quality and reliability.`
+      },
+      {
+        company: 'ASM Technologies Ltd', period: 'Aug 2017 — Dec 2018', role: 'Software Engineer - Full Stack',
+        desc: `Was responsible for full-stack development using Angular, Python-Django, PostgreSQL and AWS. 
+        Reported directly to the VP of Technology, worked within an Agile process and collaborated closely with 
+        backend and UX teams across Russia, the USA, the Netherlands and other countries. Served on the technical 
+        interview panel and contributed as an engineer in the ASM product team, focusing on R&D for platforms related 
+        to the Internet of Things (IoT) and On-Board Diagnostics (OBD).`
+      },
+      {
+        company: 'Gowdanar Technologies Pvt Ltd', period: 'Aug 2016 — Aug 2017', role: 'Software Engineer',
+        desc: `Led end-to-end UI development using AngularJS, designing multiple responsive dashboards optimized for 
+        smartphones and tablets. Reported directly to the CTO, rapidly translating online designs into production-ready 
+        interfaces and implementing the admin UI with robust role-based access controls. Mentored and guided designers and 
+        front-end developers on cross-browser compatibility and responsive web design best practices, while optimizing the 
+        application build process with Grunt and providing frontend technical leadership to the team.`
+      }
+    ]
+    timeline_container = document.getElementById('timelineRoot');
+    time_line_array.forEach(timeline => {
+      const each_timeline = document.createElement('div');
+      each_timeline.className = 'timeline-block';
+      each_timeline.innerHTML = `<div class="timeline-left">
+            <div class="company">${timeline.company}</div>
+            <div class="period">${timeline.period}</div>
+          </div>
+          <div class="timeline-right">
+            <div class="role">${timeline.role}</div>
+            <div class="desc">${timeline.desc}</div>
+          </div>`;
+      timeline_container.appendChild(each_timeline);
+    })
+
+    //Projects
+    projects_tab_list = [
+      { id: 'tab-all', tab_title: 'All' },
+      { id: 'tab-learning', tab_title: 'Learning' },
+      { id: 'tab-banking', tab_title: 'Banking' },
+      { id: 'tab-semiconductor', tab_title: 'Semiconductor' },
+      { id: 'tab-scientific', tab_title: 'Scientific' },
+    ]
+    project_tabs_container = document.getElementById('portfolioTabs');
+    projects_tab_list.forEach(tab => {
+      const tab_container = document.createElement('li');
+      tab_container.className = 'nav-item';
+      tab_container.innerHTML = `<button class="nav-link ${tab.tab_title === 'All' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#${tab.id}">${tab.tab_title}</button>`;
+      project_tabs_container.appendChild(tab_container);
+    })
+
+    const tab_content_list = [
+      { tab_id: "tab-all", grid_id: "grid-all" },
+      { tab_id: "tab-learning", grid_id: "grid-learning" },
+      { tab_id: "tab-banking", grid_id: "grid-banking" },
+      { tab_id: "tab-semiconductor", grid_id: "grid-semiconductor" },
+      { tab_id: "tab-scientific", grid_id: "grid-scientific" }
+    ];
+    const tab_content_container = document.querySelector('#project-container');
+    const tabContentWrapper = document.createElement('div');
+    tabContentWrapper.className = 'tab-content';
+    // Insert as third child
+    const thirdChild = tab_content_container.children[2];
+    tab_content_container.insertBefore(tabContentWrapper, thirdChild);
+    // Generate tab panes inside the wrapper
+    tab_content_list.forEach(tab_content => {
+      const tabPane = document.createElement('div');
+      tabPane.className = 'tab-pane fade';
+      if (tab_content.tab_id === 'tab-all') {
+        tabPane.classList.add('show', 'active');
+      }
+      tabPane.id = tab_content.tab_id;
+      tabPane.innerHTML = `<div class="row g-4" id="${tab_content.grid_id}"></div>`;
+      tabContentWrapper.appendChild(tabPane);
+    });
+
+    // Modal Conetent
     const items = [
       {
         tab: ["all", "learning"],
-        img: "jux1.png",
+        img: "./img/jux1.png",
         title: "JUX",
         desc: "JUX is a website built for Jain University. It is built over the OpenEdx instance which involves both LMS and CMS. The platform allows the students of the University to enroll to the courses powered by edx.org and also to the courses created by the same Institution."
       },
       {
         tab: ["all", "semiconductor"],
-        img: "applied.png",
+        img: "./img/applied.png",
         title: "Lab-Monitoring",
         desc: "Lab-Monitoring, is a web-based application built for the client Applied Materials. It helps in monitoring all the semiconductor tools installed within Applied Materials premises."
       },
       {
         tab: ["all", "learning"],
-        img: "gsmart.png",
+        img: "./img/gsmart.png",
         title: "GSMART",
         desc: "This is an Enterprise Resource Planning project where HR can manage the employee payroll and attendance timesheet in the organization. The GSMART app gives an easy solution to manage the employee records and to track, maintain, attendance timesheet of each employee."
       },
       {
         tab: ["all", "banking"],
-        img: "atl.png",
+        img: "./img/atl.png",
         title: "AnyTimeLoan",
         desc: "ATL is a leading lending marketplace. It aims at making credit available to millions of Unbanked & credit starved Indians via mapping their digital footprints."
       },
       {
         tab: ["all", "scientific"],
-        img: "kogence.png",
+        img: "./img/kogence.png",
         title: "Kogence",
         desc: "Kogence brings supercomputing infrastructure to the web browser of any personal device. It enables engineers, researchers, scientists and students to collaborate, rapidly iterate and execute their models and simulations on supercomputing infrastructure as needed with zero setup."
       }
@@ -1471,6 +412,7 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
       document.getElementById('modalTitle').textContent = card.dataset.title;
       document.getElementById('modalDesc').textContent = card.dataset.desc;
     });
+
     // footer year
     document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -1495,31 +437,17 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
           }
         });
       }, { threshold: 0.14 });
-
       document.querySelectorAll('section').forEach(s => observer.observe(s));
     })();
-
-    /* Smooth Menu Scrolling */
-    // $('.topbar .menu a').on('click', function () {
-    //   $('.topbar .menu a').removeClass('active');
-    //   $(this).addClass('active');
-    //   const tgt = $(this).data('target');
-    //   if (tgt && $(tgt).length) {
-    //     $('html,body').animate({ scrollTop: $(tgt).offset().top - 68 }, 560);
-    //   }
-    // });
 
     /* Click: smooth scroll + active state */
     /* Click: smooth scroll + active */
     $('.topbar .menu a').on('click', function (e) {
       e.preventDefault();
-
       const $link = $(this);
       const targetSel = $link.data('target'); // e.g. "#about"
-
       $('.topbar .menu a').removeClass('active');
       $link.addClass('active');
-
       const $sec = $(targetSel);
       if ($sec.length) {
         $('html, body').animate(
@@ -1532,10 +460,9 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
     /* Scroll: detect section via data-targets */
     const $menuLinks = $('.topbar .menu a');
     const sections = [];
-
     // Build a clean mapping once
     $menuLinks.each(function () {
-      const target = $(this).data('target');   // "#hero", "#about", ...
+      const target = $(this).data('target');   // "#hero", "#about", etc
       const $sec = target ? $(target) : $();
       if ($sec.length) {
         sections.push({ target, $sec });
@@ -1546,21 +473,17 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
       const scrollPos = $(this).scrollTop();
       const winHeight = $(this).height();
       const middleLine = scrollPos + winHeight * 0.35;  // 35% from top
-
       let currentTarget = null;
-
       // Pick the last section whose top is above the middle line
       for (let i = 0; i < sections.length; i++) {
         const { target, $sec } = sections[i];
         const top = $sec.offset().top;
-
-        if (middleLine >= top - 80) {          // header offset tolerance
+        if (middleLine >= top - 80) { // header offset tolerance
           currentTarget = target;
         } else {
           break;
         }
       }
-
       // If nothing matched but user is at bottom, force last section (Contact)
       if (!currentTarget && sections.length) {
         const docBottom = $(window).scrollTop() + winHeight;
@@ -1569,37 +492,17 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
           currentTarget = sections[sections.length - 1].target;
         }
       }
-
       if (!currentTarget) return;
-
       $menuLinks
         .removeClass('active')
         .filter('[data-target="' + currentTarget + '"]')
         .addClass('active');
     });
 
-
-
-
-
-    // hero down arrow
+    // down arrow
     $('#downArrow').on('click', function () {
       $('html,body').animate({ scrollTop: $('#about').offset().top - 68 }, 650);
     });
-
-    /* Skills bar fill on reveal */
-    // const skills = document.querySelectorAll('#skills .skill-pill');
-    // const skillsObserver = new IntersectionObserver((entries) => {
-    //   entries.forEach(entry => {
-    //     if (entry.isIntersecting) {
-    //       const val = entry.target.getAttribute('data-val') || '80';
-    //       const fill = entry.target.querySelector('.skill-fill');
-    //       if (fill) fill.style.width = val + '%';
-    //       skillsObserver.unobserve(entry.target);
-    //     }
-    //   });
-    // }, { threshold: 0.25 });
-    // skills.forEach(s => skillsObserver.observe(s));
 
     const skills = document.querySelectorAll('#skills .skill-pill');
 
@@ -1629,7 +532,7 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
     // initial show for first tab
     $('#projects .tab-pane.active .project-item').each(function (i) { setTimeout(() => $(this).addClass('show'), i * 80); });
 
-    /* HERO canvas: dense network like reference */
+    /* canvas: dense network like reference */
     (function () {
       const c = document.getElementById('hero-canvas');
       if (!c) return;
@@ -1707,7 +610,6 @@ When not architecting the next breakthrough or mentoring teams, I cherish deep c
 
       step();
     })();
-
 
     /* Micro interactions */
     $(document).on('mouseenter', '.project-item', function () { $(this).css({ transform: 'translateY(-10px)', boxShadow: '0 18px 40px rgba(0,0,0,0.06)' }); });
